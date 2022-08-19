@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@400;600&display=swap');
+
+
+//Variables
+
+//Colores
+$background: #dfaadc;
+$titulo: #ffff20;
+$vidas: #63055f;
+$bgTarjetas: #f2f3c9;
+$textColor: #2f303c;
+
+//Contenido
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $background;
+    margin: 2rem 0 1rem 0;
+    height: 100vh;
+    font-family: 'Khand', sans-serif;
+}
+
+@media (min-width: 764px) {
+    body {
+        overflow-y: hidden;
+    }
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 100%;
+    margin: auto;
+}
+
+@media (min-width: 764px) {
+    .contenedor {
+        flex-direction: row;
+        max-width: 100%;
+        margin: 0 2rem;
+        gap: 3.3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contenedor {
+        gap: 5rem;
+    }
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 3.3rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px black;
+    padding: 0;
+    font-size: 1.7rem;
+    font-weight: 400;
+    font-family: 'Titan One', cursive;
+    color: $bgTarjetas;
+}
+
+@media (min-width: 764px) {
+    .titulo {
+        font-size: 2.3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .titulo {
+        font-size: 2.6rem;
+        margin-bottom: 5rem;
+    }
+}
+
+.vidas {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: $vidas;
+    text-shadow: 1px 1px 1px gray;
+}
+
+@media (min-width: 764px) {
+    .vidas {
+        font-size: 1.1rem;
+    }
+}
+
+.mesa {
+    height: 100%;
+    max-height: 100%;
+    box-shadow: 1px 1px 2px 2px black;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .7rem;
+    margin-top: .3rem;
+    border-radius: .3rem;
+    background-color: $background;
+    perspective: 1200px;
+}
+
+@media (min-width: 764px) {
+    .mesa {
+        width: auto;
+        padding: 1.5rem;
+        gap: .9rem;
+    }
+}
+
+.tarjeta {
+    box-shadow: 1px 1px 2px 2px black;
+    border-radius: .3rem;
+    background-color: $bgTarjetas;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 600ms ease;
+    width: 4rem;
+    height: 4rem;
+}
+
+@media (min-width: 764px) {
+    .tarjeta {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .tarjeta {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .tarjeta {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+}
+
+.frontal,
+.dorso {
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    pointer-events: none;
+}
+
+@media (min-width: 764px) {
+
+    .frontal,
+    .dorso {
+        height: 4.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .frontal,
+    .dorso {
+        height: 5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .frontal,
+    .dorso {
+        height: 5.5rem;
+    }
+}
+
+.dorso {
+    background-color: $bgTarjetas;
+    backface-visibility: hidden;
+    border-radius: .3rem;
+}
+
+.girarTarjeta {
+    transform: rotateY(180deg);
+}
+
+.frontal {
+    transform: rotateY(-180deg);
+}
+
+.noJugar {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.guia-contenedor {
+    border: 2px dashed $vidas;
+    padding: .8rem;
+    max-width: 22rem;
+    color: $textColor;
+}
+
+@media (min-width: 764px) {
+    .guia-contenedor {
+        padding: 1.2rem;
+        align-self: flex-start;
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .guia-contenedor {
+        max-width: 30rem;
+        font-size: 1.1rem;
+    }
+}
+
+.guia-info {
+    list-style: none;
+}
+
+//Alerta de SweetAlert2
+
+.swal-container {
+    border: 6px solid #63055f;
+    border-radius: 1rem;
+    color: $textColor;
+    max-width: 26rem;
+}

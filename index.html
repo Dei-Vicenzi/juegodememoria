@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria</title>
+    <link rel="normalize" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h1 class="titulo">Juego de memoria</h1>
+
+    <main class="contenedor">
+
+        <div>
+            <h2 class="vidas">Total de vidas: <span id="vidas"></span> </h2>
+            <div id="grid" class="mesa"></div>
+        </div>
+
+        <div class="guia-contenedor">
+            <h3>Cómo jugar</h3>
+            <ul class="guia-info">
+                <li>El objetivo del juego es encontrar 8 pares de imágenes idénticas.</li>
+                <li>Tendrás 5 vidas al comenzar y perderás 1 cuando el par seleccionado no coincida.</li>
+                <li>Recuperarás las 5 vidas iniciales cada vez que encuentres 1 par idéntico.</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <script async src="js/app.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
